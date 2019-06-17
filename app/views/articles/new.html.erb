@@ -1,5 +1,14 @@
 <h3>New Article</h3>
 <%= form_with scope: :article,url: articles_path, local: true do |form| %>
+  <% if @article.errors.any? %>
+  <div id="explanation">
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <%end%>
+    </ul>
+  </div>
+  <% end %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
