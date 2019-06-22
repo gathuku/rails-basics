@@ -1,26 +1,36 @@
-<h3>New Article</h3>
-<%= form_with scope: :article,url: articles_path, local: true do |form| %>
-  <% if @article.errors.any? %>
-  <div id="explanation">
-    <ul>
-      <% @article.errors.full_messages.eachg do |msg| %>
-      <li><%= msg %></li>
-      <%end%>
-    </ul>
+<div class="container">
+  <div class="card mt-2">
+    <div class="card-header">
+      <h3 class="card-title">New Article</h3>
+      <div class="card-tools">
+        <button class="btn btn-warning" type="button" name="button"><%= link_to 'Back', articles_path %></button>
+      </div>
+    </div>
+    <div class="card-body">
+      <%= form_with scope: :article,url: articles_path, local: true do |form| %>
+        <% if @article.errors.any? %>
+        <div id="explanation">
+          <ul class="text-danger">
+            <% @article.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <%end%>
+          </ul>
+        </div>
+        <% end %>
+        <div class="form-group">
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+        </div>
+
+        <p>
+          <%= form.label :text %><br>
+          <%= form.text_area :text %>
+        </p>
+
+        <button class="btn btn-default">
+          <%= form.submit %>
+        </button>
+      <% end %>
+    </div>
   </div>
-  <% end %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
-<%= link_to 'Back', articles_path %>
+</div>

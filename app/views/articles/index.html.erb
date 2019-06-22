@@ -1,24 +1,33 @@
-<h3>Listing all Articles </h3>
-<br>
-<%= link_to 'New article', new_article_path %>
-<br>
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
+<div class="container">
+  <div class="card mt-4">
+    <div class="card-header">
+      <h3 class="card-title">Listing all Articles </h3>
+      <div class="card-tool">
+        <button class="btn btn-warning" type="button" name="button">
+          <%= link_to 'New article', new_article_path %>
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-dark">
+        <thead>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Body</th>
+          <th></th>
 
-  </thead>
-  <tbody>
-   <% @articles.each do |article| %>
-      <tr>
-      <td><%= article.id%></td>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      </tr>
-    <%end%>
-
-  </tbody>
-</table>
+        </thead>
+        <tbody>
+          <% @articles.each do |article| %>
+             <tr>
+             <td><%= article.id%></td>
+             <td><%= article.title %></td>
+             <td><%= article.text %></td>
+             <td><%= link_to 'Show', article_path(article) %></td>
+             </tr>
+           <%end%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
