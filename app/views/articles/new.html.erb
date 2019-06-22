@@ -7,30 +7,7 @@
       </div>
     </div>
     <div class="card-body">
-      <%= form_with scope: :article,url: articles_path, local: true do |form| %>
-        <% if @article.errors.any? %>
-        <div id="explanation">
-          <ul class="text-danger">
-            <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <%end%>
-          </ul>
-        </div>
-        <% end %>
-        <div class="form-group">
-          <%= form.label :title %><br>
-          <%= form.text_field :title %>
-        </div>
-
-        <p>
-          <%= form.label :text %><br>
-          <%= form.text_area :text %>
-        </p>
-
-        <button class="btn btn-default">
-          <%= form.submit %>
-        </button>
-      <% end %>
+         <%= render 'form' %>
     </div>
   </div>
 </div>
