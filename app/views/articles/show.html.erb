@@ -21,6 +21,14 @@
               <strong>Comment:</strong>
               <%= comment.body %>
             </p>
+            <button class="btn btn-warning" type="button" name="button">
+
+             <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' }
+              %>
+
+            </button>
           <% end %>
       </div>
       <div class="">
