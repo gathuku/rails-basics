@@ -1,24 +1,18 @@
-# README
+## Blog
+A simple blog Application
+### Technologies used
+- Rails
+- Bootstrap
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Covered
+- CRUD/BREAD operations
+- Resource routing and controllers
+- Models and Migrations
+- Validation
+- Model Relationships
 
-Things you may want to cover:
 
-* Ruby version
+### Sample Screen
+![](/public/rr.png)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](/public/rr1.png)
